@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Add Pegawai</title>
+</head>
+<body>
+	<h3>Tambah Pegawai</h3>
+	<form th:action="@{/pegawai/add}" th:object="${pegawai}" method="POST">
+		Nama : <br>
+		<input type="text" name="nama"/>
+		<br>
+		
+	
+	</form>
+</body>
+</html>

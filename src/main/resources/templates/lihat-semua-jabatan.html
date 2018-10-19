@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>View Detail Semua Jabatan</title>
+	</head>
+	<body>
+		<nav th:replace="fragments/fragment :: navbar"></nav>
+		<table border="I">
+				<caption>Detail Jabatan</caption>
+				<thead>
+					<tr>
+						<th style="text-align: center">No.</th>
+						<th style="text-align: center">Nama</th>
+						<th style="text-align: center">Deskripsi</th>
+						<th style="text-align: center">Gaji Pokok</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="jabatan,iterationStatus : *{Listjabatan}">
+						<td th:text="${iterationStatus.count}"></td>
+						<td th:text="${jabatan.nama}"></td>
+						<td th:text="${jabatan.deskripsi}"></td>
+						<td th:text="${jabatan.gaji_pokok}"></td>
+					</tr>
+				</tbody>
+			</table>
+	</body>
+
+</html>

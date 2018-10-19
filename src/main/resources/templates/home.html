@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Home</title>
+	</head>
+	<body>
+		<nav th:replace="fragments/fragment :: navbar"></nav>
+		<h2>SISTEM PEGAWAI</h2>
+		<h3>==============================================</h3>
+		<form th:action="@{/pegawai/view}" method="GET">
+			Lihat Data Pegawai Berdasarkan NIP :<br>
+			<input type="text" name="nip" />
+			<button type="submit">Lihat</button>
+		</form>
+		<h3>==============================================</h3>
+		<form th:action="@{/jabatan/view/}" method="GET">
+			<p>Pilih Jabatan</p>
+			<select name="idJabatan">
+				<option value="">Pilih Jabatan</option>
+				<option th:each="jabatan : ${Listjabatan}"
+						th:value="${jabatan.id}"
+						th:text="${jabatan.nama}"></option>
+			</select>
+			<input type="submit" value="lihat">
+		</form>
+		<h3>==============================================</h3>
+		<form th:action="@{/pegawai/termuda-tertua/}" method="GET">
+			<p>Pilih Instansi</p>
+			<select name="idInstansi">
+				<option value="">Pilih Instansi</option>
+				<option th:each="instansi : ${listInstansi}"
+						th:value="${instansi.id}"
+						th:text="${instansi.nama} + ' - ' + ${instansi.provinsi.nama}"></option>
+			</select>
+			<input type="submit" value="lihat">
+		</form>
+		
+		
+	</body>
+</html>
