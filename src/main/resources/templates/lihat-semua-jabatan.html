@@ -2,11 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<title>View Detail Semua Jabatan</title>
+				<object th:include="fragments/fragment :: css" th:remove="tag"></object>
+		<object th:include="fragments/fragment :: js" th:remove="tag"></object>
 	</head>
 	<body>
 		<nav th:replace="fragments/fragment :: navbar"></nav>
+				<div class="container-fluid">	
+				<br>
 		<table border="I">
-				<caption>Detail Jabatan</caption>
 				<thead>
 					<tr>
 						<th style="text-align: center">No.</th>
@@ -24,6 +27,7 @@
 					</tr>
 				</tbody>
 			</table>
+			</div>
 	</body>
 
 </html>

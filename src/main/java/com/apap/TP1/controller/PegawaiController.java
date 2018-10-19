@@ -61,6 +61,10 @@ public class PegawaiController {
 				return p1.getTanggal_lahir().compareTo(p2.getTanggal_lahir());
 			}
 		});		
+		PegawaiModel tua = newPegawai.get(0);
+		PegawaiModel muda = newPegawai.get(newPegawai.size()-1);
+		model.addAttribute("tua", tua);
+		model.addAttribute("muda", muda);
 		return "lihat-pegawai-muda-tua";
 	}
 	

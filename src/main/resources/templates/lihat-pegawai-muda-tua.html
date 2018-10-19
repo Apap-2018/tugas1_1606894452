@@ -5,7 +5,55 @@
 </head>
 <body>
 	<nav th:replace="fragments/fragment :: navbar"></nav>
-	<h3>LUL</h3>
+			<div class="container-fluid">	
+	<table border="I">
+		<caption>Pegawai Termuda Tertua</caption>
+		<thead>
+			<tr>
+				<th style="text-align: center">Data</th>
+				<th style="text-align: center">Pegawai Termuda</th>
+				<th style="text-align: center">Pegawai Tertua</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>NIP</td>
+				<td th:text="${muda.nip}"></td>
+				<td th:text="${tua.nip}"></td>
+			</tr>
+			<tr>
+				<td>Nama</td>
+				<td th:text="${muda.nama}"></td>
+				<td th:text="${tua.nama}"></td>
+			</tr>
+			<tr>
+				<td>Tempat Lahir</td>
+				<td th:text="${muda.tempat_lahir}"></td>
+				<td th:text="${tua.tempat_lahir}"></td>
+			</tr>
+			<tr>
+				<td>Tanggal Lahir</td>
+				<td th:text="${muda.tanggal_lahir}"></td>
+				<td th:text="${tua.tanggal_lahir}"></td>
+			</tr>
+			<tr>
+				<td>Tahun Masuk</td>
+				<td th:text="${muda.tahun_masuk}"></td>
+				<td th:text="${tua.tahun_masuk}"></td>				
+			</tr>
+			<tr>
+				<td>Nama Instansi</td>
+				<td th:text="${muda.instansi.nama} + ' - ' + ${muda.instansi.provinsi.nama}"></td>
+				<td th:text="${tua.instansi.nama} + ' - ' + ${tua.instansi.provinsi.nama}"></td>				
+			</tr>
+			<tr>
+				<td>Jabatan</td>
+				<td th:each="job : ${muda.jabatan}" th:text="${job.nama}"></td>
+				<td th:each="job : ${tua.jabatan}" th:text="${job.nama}"></td>
+			</tr>
+		</tbody>
+	</table>	
+	</div>
 </body>
 
 	
